@@ -17,3 +17,11 @@ caption {
   font-weight: bold;
   font-style: italic;
 }
+
+
+li:hover {
+  color: #1d03ab;
+  background-color:#04B404;
+  font-weight: bolder;
+}
+

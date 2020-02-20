@@ -62,4 +62,8 @@ export class ListaProductosComponent implements OnInit {
   }
   ngOnInit() {
   }
+
+  devolver(producto) {
+    producto.comprado = !producto.comprado;
+  }
 }

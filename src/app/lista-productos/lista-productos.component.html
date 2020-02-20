@@ -21,6 +21,6 @@
 <h2>Productos en el carrito</h2>
 <ul>
 <span *ngFor="let producto of productos index as i;">
-  <li *ngIf="productos[i].comprado">{{productos[i].nombre}}</li>
+  <li *ngIf="productos[i].comprado"><button (click)="devolver(producto)">{{productos[i].nombre}}</button></li>
 </span>
 </ul>

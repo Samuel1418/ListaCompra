@@ -1,0 +1,26 @@
+<h1>Bienvenidos a supermercados Samuel</h1>
+<table>
+  <table>
+    <tr>
+      <th>Estado del Producto</th>
+      <th>Nombre</th>
+      <th>Descripción</th>
+    </tr>
+
+    <tr *ngFor="let producto of productos index as i;">
+      <td>
+        <input type="radio" name="comprado-{{i}}" [(ngModel)]="producto.comprado" [value]=true> Al carro
+        <input type="radio" name="comprado-{{i}}" [(ngModel)]="producto.comprado" [value]=false>Mostrador
+      </td>
+      <td>{{producto.nombre}}</td>
+      <td>{{producto.descripcion}}</td>
+    </tr>
+  </table>
+</table>
+
+<h2>Productos en el carrito</h2>
+<ul>
+<span *ngFor="let producto of productos index as i;">
+  <li *ngIf="productos[i].comprado">{{productos[i].nombre}}</li>
+</span>
+</ul>

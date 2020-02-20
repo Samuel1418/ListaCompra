@@ -17,10 +17,15 @@
     </tr>
   </table>
 </table>
-
-<h2>Productos en el carrito</h2>
+<h2>Productos en el Mostrador</h2>
 <ul>
-<span *ngFor="let producto of productos index as i;">
-  <li *ngIf="productos[i].comprado"><button (click)="devolver(producto)">{{productos[i].nombre}}</button></li>
+<span *ngFor="let producto of productos;">
+  <li *ngIf="producto.comprado==false"><button (click)="devolver(producto)">{{producto.nombre}}</button></li>
+</span>
+</ul>
+<h2>Productos en el carrito</h2>
+<ul class="devolver">
+<span *ngFor="let producto of productos;">
+  <li *ngIf="producto.comprado"><button (click)="devolver(producto)">{{producto.nombre}}</button></li>
 </span>
 </ul>

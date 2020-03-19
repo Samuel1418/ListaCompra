@@ -25,6 +25,17 @@ export class ServicioDeAutentService {
         console.log('error en google login: ', error);
       });
   }
+  gitlogin() {
+    console.log('Git login!');
+    this.miauth.auth.signInWithPopup( new auth.GithubAuthProvider() )
+      .then( user => {
+        console.log('user logueado: ', user);
+        this.authUser = user.user;
+      })
+      .catch( error => {
+        console.log('error en git login: ', error);
+      });
+  }
   logout() {
     console.log('logout!');
     this.miauth.auth.signOut();
